@@ -1,0 +1,154 @@
+.app {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 220px 1fr;
+  width: 340px;
+  height: 600px;
+  background: #28616d;
+  box-shadow: 0px 0px 46px 5px #71fbf2, inset 0px 0px 33px -2px #57efef;
+  border-radius: 23px;
+  padding: 20px;
+  .control_panel {
+    display: grid;
+    justify-items: end;
+    width: 100%;
+    label[for='power'] {
+      width: 71px;
+      height: 58px;
+      font-size: 18px;
+      color: #ffffff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      .power {
+        position: relative;
+        width: 70px;
+        height: 33px;
+        background: #eabc45;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: 4px;
+          right: 42px;
+          background: #28616d;
+          border-radius: 10px;
+          transition: 0.3s;
+        }
+      }
+      .on {
+        &::after {
+          right: 2px;
+          
+        }
+      }
+    }
+    .display {
+      width: 100%;
+      height: 80px;
+      background: #eabc45;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      font-size: 32px;
+      text-align: center;
+      padding-top: 20px;
+      color: white;
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.25);
+    }
+    label[for='volume'] {
+      width: 100%;
+      height: 44px;
+      font-size: 16px;
+      color: #ffffff;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      input[name='volume'] {
+        &::-webkit-slider-thumb {
+          margin-top: 3px;
+          width: 100px;
+          height: 19px;
+          accent-color: #28616d;
+          background: #28616d;
+          border-radius: 10px;
+        }
+        &::-ms-track {
+          width: 100px;
+          height: 19px;
+          accent-color: #28616d;
+          background: #28616d;
+          border-radius: 10px;
+        }
+        &::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 25px;
+          background: #eabc45;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .keyboard {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
+    button[class="drum-pad"] {
+      border: none;
+      outline: none;
+      width: 96px;
+      height: 96px;
+      background: #eabc45;
+      border-radius: 10px;
+      font-size: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.25);
+      &:active {
+        background: #cba545;
+        color: #ffffffc0;
+      }
+      &:disabled {
+        background: #b38f34;
+      }
+      audio {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  @media (min-width: 820px) {
+    width: 660px;
+    height: 340px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 320px;
+    justify-items: center;
+    .control_panel {
+        justify-items: start;
+        align-content: space-between;
+      label[for='power'] {
+        grid-row: 3/4;
+      }
+      .display {
+        grid-row: 2/3;
+      }
+      label[for='volume'] {
+        grid-row: 1/2;
+      }
+    }
+  }
+}

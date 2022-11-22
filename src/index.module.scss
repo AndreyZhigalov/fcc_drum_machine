@@ -1,0 +1,42 @@
+* {
+ font-family: 'Rubik Dirt', cursive;
+ box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;  
+  height: 100%;
+  width: 100%;
+  background: #0f3642;
+  box-shadow: inset 0px 4px 230px -77px rgba(255, 255, 255, 0.25);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
